@@ -1,0 +1,100 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "exercise",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.682864919129.215577655350"
+              }
+            }
+          ],
+          "name": "customExerciseIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+            "no",
+            "cancelar"
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "Cómo uso la skill",
+            "Para que sirve",
+            "Cómo usar",
+            "Qué hace esta skill",
+            "ayuda"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+            "finalizar",
+            "cierra pausa activa",
+            "cerrar pausa activa",
+            "cerrar la skill",
+            "cierra la skill",
+            "chao",
+            "hasta luego",
+            "adiós",
+            "cerrar"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "name": "exercise",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{exercise}"
+              ]
+            }
+          ],
+          "name": "customExerciseIntent",
+          "samples": [
+            "pausa activa de {exercise}",
+            "Ejercicios de {exercise}",
+            "Ejercitar {exercise}",
+            "Trabajar {exercise}",
+            "Entrenar {exercise}"
+          ]
+        }
+      ],
+      "types": [],
+      "invocationName": "pausa activa"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "No tengo actividades para este ejercicio, intenta con otro. Prueba diciendo Ejercicios de manos."
+          }
+        ],
+        "id": "Elicit.Slot.682864919129.215577655350"
+      }
+    ]
+  }
+}
